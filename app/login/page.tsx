@@ -18,8 +18,11 @@ export default async function LoginPage({
   return (
     <main className="login">
       <div className="login-card">
-        <p className="kicker">@studio.dvc</p>
-        <h1>Studio DVC</h1>
+        <div className="brand brand-center">
+          <p className="logo">studio.dvc</p>
+          <span className="brand-tag">Insights</span>
+        </div>
+        <h1>Analítica de Instagram</h1>
         <p className="quiet">Página privada. Entra con la contraseña de la app.</p>
         {query.error ? <p className="error">Esa contraseña no es. Prueba otra vez.</p> : null}
         <form method="post" action="/api/login">

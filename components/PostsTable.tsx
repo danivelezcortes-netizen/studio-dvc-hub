@@ -5,6 +5,7 @@ import { Dash } from './Dash';
 import { Thumb } from './Thumb';
 import { formatDecimal, formatInt, formatPercent } from '@/lib/format';
 import type { PostView } from '@/lib/types';
+import { placementClass } from '@/lib/placement';
 
 type SortKey = 'fecha' | 'dia' | 'hora' | 'views' | 'retencion' | 'shares' | 'saves';
 
@@ -42,10 +43,10 @@ export function PostsTable({ posts }: { posts: PostView[] }) {
               <th>Publicación</th>
               <th>Día y hora</th>
               <th className="num">Views</th>
-              <th className="num">Ret. 3 s</th>
-              <th className="num">Comp. / 1.000</th>
-              <th className="num">Guard. / 1.000</th>
-              <th className="num">Follows</th>
+              <th className="num metric-retention">Ret. 3 s</th>
+              <th className="num metric-shares">Comp. / 1.000</th>
+              <th className="num metric-saves">Guard. / 1.000</th>
+              <th className="num metric-follows">Follows</th>
               <th>Link</th>
             </tr>
           </thead>
@@ -57,7 +58,7 @@ export function PostsTable({ posts }: { posts: PostView[] }) {
                 </td>
                 <td>
                   <strong>{post.title}</strong>
-                  <span className="cell-note">{post.placementLabel}</span>
+                  <span className={`pill ${placementClass(post)}`}>{post.placementLabel}</span>
                 </td>
                 <td>{post.postedLabel}</td>
                 <td className="num">{showInt(post.views)}</td>
@@ -85,26 +86,26 @@ export function PostsTable({ posts }: { posts: PostView[] }) {
             <Thumb id={post.id} alt={post.alt} hasThumbnail={post.hasThumbnail} tall />
             <p className="meta">{post.postedLabel}</p>
             <h3>{post.title}</h3>
-            <p className="meta">{post.placementLabel}</p>
+            <p className={`pill ${placementClass(post)}`}>{post.placementLabel}</p>
             <p className="hook">{post.caption}</p>
             <dl>
               <div>
                 <dt>Views</dt>
                 <dd>{showInt(post.views)}</dd>
               </div>
-              <div>
+              <div className="metric-retention">
                 <dt>Ret. 3 s</dt>
                 <dd>{showRetention(post)}</dd>
               </div>
-              <div>
+              <div className="metric-shares">
                 <dt>Comp. / 1.000</dt>
                 <dd>{showDecimal(post.sharesPer1k)}</dd>
               </div>
-              <div>
+              <div className="metric-saves">
                 <dt>Guard. / 1.000</dt>
                 <dd>{showDecimal(post.savesPer1k)}</dd>
               </div>
-              <div>
+              <div className="metric-follows">
                 <dt>Follows</dt>
                 <dd>{showFollows(post)}</dd>
               </div>

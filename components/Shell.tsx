@@ -8,39 +8,30 @@ export function Shell({ children }: { children: ReactNode }) {
       <a className="skip" href="#contenido">
         Saltar al contenido
       </a>
-      <header className="sidebar">
-        <p className="brand-kicker">@studio.dvc</p>
-        <h1>Studio DVC</h1>
-        <nav aria-label="Secciones">
-          <ul>
-            {links.map(([id, label]) => (
-              <li key={id}>
-                <a href={`#${id}`}>{label}</a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <form action="/api/logout" method="post">
-          <button type="submit" className="logout">
-            Salir
-          </button>
-        </form>
-      </header>
-      <div className="topbar">
-        <div>
-          <p>@studio.dvc</p>
-          <h1>Studio DVC</h1>
+      <header className="topbar">
+        <div className="brand">
+          <a className="logo" href="#contenido">
+            studio.dvc
+          </a>
+          <span className="brand-tag">Insights</span>
         </div>
         <nav aria-label="Secciones">
           <ul>
             {links.map(([id, label]) => (
               <li key={id}>
-                <a href={`#${id}`}>{label}</a>
+                <a className="nav-pill" href={`#${id}`}>
+                  {label}
+                </a>
               </li>
             ))}
           </ul>
         </nav>
-      </div>
+        <form action="/api/logout" method="post">
+          <button type="submit" className="btn-secondary">
+            Salir
+          </button>
+        </form>
+      </header>
       <main id="contenido">{children}</main>
     </div>
   );
