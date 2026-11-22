@@ -1,0 +1,475 @@
+import type { AddedBy, FrameKind, HookStatus, InspoItem, ItemType, Note, Pillar, SourceKind } from "./types";
+
+const ARCHIVE = "https://app.notion.com/p/4120ebc7574281658eb7ed8176f4e99d";
+const REPORT_16 = "https://app.notion.com/p/41a0ebc7574281889a8ef7bd647d1986";
+const VOGUE = "https://app.notion.com/p/4150ebc757428152a46ffe8ac4a91795";
+const BOARD = "https://www.pinterest.com/dan1_velez/busy-handbag/";
+
+type Seed = {
+  id: string;
+  title: string;
+  type: ItemType;
+  tags: string[];
+  pillar?: Pillar | "";
+  status?: HookStatus | "";
+  source: SourceKind;
+  sourceUrl?: string;
+  account?: string;
+  origin: string;
+  addedBy: AddedBy;
+  savedAt: string;
+  imagePath?: string | null;
+  imageUrl?: string;
+  notionUrl?: string;
+  howToUse: string;
+  sound?: string;
+  frame?: FrameKind | null;
+  notes?: Note[];
+  weekKey?: string | null;
+  used?: boolean;
+  usedAt?: string | null;
+};
+
+function note(id: string, text: string, at: string): Note {
+  return { id, text, createdAt: at, updatedAt: at };
+}
+
+function build(seed: Seed): InspoItem {
+  const stamp = `${seed.savedAt.slice(0, 10)}T10:00:00.000Z`;
+  return {
+    id: seed.id,
+    externalId: seed.id,
+    title: seed.title,
+    type: seed.type,
+    tags: seed.tags,
+    pillar: seed.pillar ?? "",
+    status: seed.status ?? "",
+    source: seed.source,
+    sourceUrl: seed.sourceUrl ?? "",
+    account: seed.account ?? "",
+    origin: seed.origin,
+    addedBy: seed.addedBy,
+    savedAt: seed.savedAt.slice(0, 10),
+    imagePath: seed.imagePath ?? null,
+    imageUrl: seed.imageUrl ?? "",
+    driveUrl: "",
+    notionUrl: seed.notionUrl ?? "",
+    howToUse: seed.howToUse,
+    sound: seed.sound ?? "",
+    frame: seed.frame ?? null,
+    notes: seed.notes ?? [],
+    weekKey: seed.weekKey ?? null,
+    used: seed.used ?? false,
+    usedAt: seed.usedAt ?? null,
+    history: [],
+    createdAt: stamp,
+    updatedAt: stamp,
+  };
+}
+
+export function seedItems(): InspoItem[] {
+  return [
+    build({
+      id: "seed-lart",
+      title: "Mayúsculas apiladas a la izquierda",
+      type: "texto",
+      tags: ["Texto en pantalla", "Trends"],
+      source: "Instagram",
+      sourceUrl: "https://www.instagram.com/___lart/",
+      account: "___lart",
+      origin: "Referencia de texto en pantalla · 18 nov 2026",
+      addedBy: "Rutina IG lunes",
+      savedAt: "2026-11-18",
+      imagePath: "/seed/ig/lart.png",
+      notionUrl: ARCHIVE,
+      howToUse:
+        "Estilo de texto, no un hook para copiar al pie de la letra: mayúsculas en fucsia, apiladas y alineadas a la izquierda. Sirve cuando el texto tiene que leerse en dos o tres golpes cortos y dejar la pieza libre a la derecha.",
+    }),
+    build({
+      id: "seed-intocarry",
+      title: "Título, subtítulo y tres tarjetas",
+      type: "texto",
+      tags: ["Texto en pantalla", "Trends"],
+      source: "Instagram",
+      sourceUrl: "https://www.instagram.com/intocarry.co/",
+      account: "intocarry.co",
+      origin: "Referencia de texto en pantalla · 18 nov 2026",
+      addedBy: "Rutina IG lunes",
+      savedAt: "2026-11-18",
+      imagePath: "/seed/ig/intocarry.png",
+      notionUrl: ARCHIVE,
+      howToUse:
+        "Estructura de pantalla: un título, un subtítulo y tres tarjetas de tips. Para un reel de proceso en tres pasos reales del taller. Los consejos tienen que ser de su trabajo, no una lista inventada.",
+    }),
+    build({
+      id: "seed-mnera",
+      title: "Display sobre amarillo mantequilla",
+      type: "texto",
+      tags: ["Texto en pantalla", "Trends"],
+      source: "Instagram",
+      sourceUrl: "https://www.instagram.com/mnera.studio/",
+      account: "mnera.studio",
+      origin: "Referencia de texto en pantalla · 18 nov 2026",
+      addedBy: "Rutina IG lunes",
+      savedAt: "2026-11-18",
+      imagePath: "/seed/ig/mnera.png",
+      notionUrl: ARCHIVE,
+      howToUse:
+        "Una sola palabra enorme sobre un campo amarillo mantequilla, en una serif de display. En Studio DVC el equivalente es una tarjeta amarilla con Inter Tight ExtraBold, negra, sin logo, y la palabra justa.",
+    }),
+    build({
+      id: "seed-soulful",
+      title: "Minúsculas pesadas a sangre",
+      type: "texto",
+      tags: ["Texto en pantalla", "Making"],
+      pillar: "Making",
+      source: "Instagram",
+      sourceUrl: "https://www.instagram.com/soulfulbrushstrokes/",
+      account: "soulfulbrushstrokes",
+      origin: "Referencia de texto en pantalla · 18 nov 2026",
+      addedBy: "Rutina IG lunes",
+      savedAt: "2026-11-18",
+      imagePath: "/seed/ig/soulful.png",
+      notionUrl: ARCHIVE,
+      howToUse:
+        "Una frase en minúsculas, muy pesada, ocupando la pantalla. En la referencia el color es rojo; aquí el acento es fucsia. Sirve para una línea de proceso que se queda quieta varios segundos.",
+    }),
+    build({
+      id: "seed-sophie",
+      title: "___ is the main character",
+      type: "hook",
+      tags: ["Hooks", "Eye", "Hunt", "Outfits", "Flores", "Sonidos", "Texto en pantalla"],
+      pillar: "Eye",
+      status: "Lista",
+      source: "Instagram",
+      sourceUrl: "https://www.instagram.com/sophiesimonedesigns/reel/DfU1cVxKrXW/",
+      account: "sophiesimonedesigns",
+      origin: "Creative · reporte 16 nov 2026",
+      addedBy: "Rutina IG lunes",
+      savedAt: "2026-11-16",
+      imagePath: "/seed/ig/sophie.png",
+      sound: "Cheryl Lynn · Got to Be Real",
+      notionUrl: "https://app.notion.com/p/41a0ebc75742816c82cfdbb2087e2fd2",
+      weekKey: "2026-W47",
+      notes: [
+        note(
+          "note-sophie-1",
+          "Para el collar de orquídea, con cortes calmos. Se enlaza con “One piece. Endless possibilities.”, no se duplica.",
+          "2026-11-16T11:20:00.000Z",
+        ),
+      ],
+      howToUse:
+        "The eye: “___ is the main character” para una pieza hecha a mano (el collar de orquídea en resina ahora, el bolso después), con outfits que ya tiene en cámara. Cortes calmos. También cabe en The hunt: “this flea market find is the main character”, con un hallazgo de La Trouvaille.",
+    }),
+    build({
+      id: "seed-linda",
+      title: "day ___ of sewing my dream ___ collection",
+      type: "hook",
+      tags: ["Hooks", "Making", "Life", "Handbags", "Bolsos", "Texto en pantalla"],
+      pillar: "Making",
+      status: "Lista",
+      source: "Instagram",
+      sourceUrl: "https://www.instagram.com/lindaqzhang/reel/De0hwXpucZ0/",
+      account: "lindaqzhang",
+      origin: "Creative · reporte 16 nov 2026",
+      addedBy: "Rutina IG lunes",
+      savedAt: "2026-11-16",
+      imagePath: "/seed/ig/linda.png",
+      sound: "Original audio",
+      notionUrl: "https://app.notion.com/p/41a0ebc7574281dcb4cadd81e618e6b1",
+      weekKey: "2026-W47",
+      used: true,
+      usedAt: "2026-11-20T18:10:00.000Z",
+      howToUse:
+        "The making, capítulo bolsos. Serie contada: cada episodio cierra en el siguiente paso, no en el bolso terminado. Se enlaza con “Watch me make this bag, part 1”, sin repetirlo. En pantalla, el original abre con “today” y “day 3 sewing my dream bag collection”.",
+    }),
+    build({
+      id: "seed-howrad",
+      title: "me doing everything but ___",
+      type: "hook",
+      tags: ["Hooks", "Making", "Life", "Texto en pantalla"],
+      pillar: "Life",
+      status: "Maybe",
+      source: "Instagram",
+      sourceUrl: "https://www.instagram.com/howradstudios/reel/DfXujRbxXst/",
+      account: "howradstudios",
+      origin: "SM Ideas · reporte 16 nov 2026",
+      addedBy: "Rutina IG lunes",
+      savedAt: "2026-11-16",
+      imagePath: "/seed/ig/howrad.png",
+      sound: "paramore_mex · Original audio",
+      notionUrl: REPORT_16,
+      notes: [
+        note(
+          "note-howrad-1",
+          "Fit Maybe. El chiste es más alto que su tono. Solo si es algo que de verdad hace.",
+          "2026-11-16T11:40:00.000Z",
+        ),
+      ],
+      howToUse:
+        "Una línea honesta sobre un clip calmo que ya tiene: la pieza a medias en la mesa, o las manos ordenando hilos en vez de coser. Plantilla “me doing everything but ___”. El tono del chiste es más alto que el suyo, por eso queda en Maybe. Líneas confirmadas: empezar es lo más difícil; cuando cose una línea, el resto sigue.",
+    }),
+    build({
+      id: "seed-zeopatra",
+      title: "Una palabra, abajo al centro",
+      type: "texto",
+      tags: ["Texto en pantalla", "Eye", "Hunt", "Trends", "La Trouvaille"],
+      pillar: "Hunt",
+      source: "Instagram",
+      sourceUrl: "https://www.instagram.com/zeopatra/reel/DfSNHyMBrmi/",
+      account: "zeopatra",
+      origin: "Creative · reporte 16 nov 2026",
+      addedBy: "Rutina IG lunes",
+      savedAt: "2026-11-16",
+      imagePath: "/seed/ig/zeopatra.png",
+      sound: "Original audio",
+      notionUrl: REPORT_16,
+      howToUse:
+        "Cortar una forma que vio (una fachada de París, un objeto de La Trouvaille, un pétalo en macro) contra la pieza que salió de ahí, con una sola palabra en Roboto Mono. En el reel, las palabras vistas son “brutalist” y luego “cool”. La palabra sola es un hook fino: queda como idea, no como fila del Hook Bank.",
+    }),
+    build({
+      id: "seed-vogue-01",
+      title: "Street style: morado, coral y bolso negro",
+      type: "outfit",
+      tags: ["Outfits", "Handbags", "Eye", "Life"],
+      pillar: "Eye",
+      source: "Vogue",
+      sourceUrl: "https://www.vogue.com/",
+      account: "Vogue",
+      origin: "Vogue · imagen guardada",
+      addedBy: "Vogue viernes",
+      savedAt: "2026-11-20",
+      imagePath: "/seed/vogue/01.jpg",
+      notionUrl: VOGUE,
+      howToUse:
+        "The eye. Un outfit de calle con un bolso chico en la mano: color plano, un cinturón de fleco y la pieza abajo, no al centro. Sirve para ver cómo se lleva un bolso pequeño sin que se pierda.",
+    }),
+    build({
+      id: "seed-vogue-04",
+      title: "Clutch negro con fleco largo",
+      type: "imagen",
+      tags: ["Handbags", "Outfits", "Eye"],
+      pillar: "Eye",
+      source: "Vogue",
+      sourceUrl: "https://www.vogue.com/",
+      account: "Vogue",
+      origin: "Vogue · imagen guardada",
+      addedBy: "Vogue viernes",
+      savedAt: "2026-11-20",
+      imagePath: "/seed/vogue/04.jpg",
+      notionUrl: VOGUE,
+      howToUse:
+        "Un clutch que se vuelve una línea: el fleco blanco llega al piso. Referencia de largo y de contraste, no de la silueta del traje.",
+    }),
+    build({
+      id: "seed-vogue-05",
+      title: "Collar de piedras y gotas",
+      type: "detalle",
+      tags: ["Trends", "Eye", "Outfits"],
+      pillar: "Eye",
+      source: "Vogue",
+      sourceUrl: "https://www.vogue.com/",
+      account: "Vogue",
+      origin: "Vogue · imagen guardada",
+      addedBy: "Vogue viernes",
+      savedAt: "2026-11-20",
+      imagePath: "/seed/vogue/05.jpg",
+      notionUrl: VOGUE,
+      howToUse:
+        "The eye, de cerca. Piedras y gotas colgando sobre la piel. Para mirar el ritmo de un adorno, no para copiar la joya.",
+    }),
+    build({
+      id: "seed-vogue-06",
+      title: "Collar de eslabones y fleco",
+      type: "detalle",
+      tags: ["Trends", "Eye", "Outfits"],
+      pillar: "Eye",
+      source: "Vogue",
+      sourceUrl: "https://www.vogue.com/",
+      account: "Vogue",
+      origin: "Vogue · imagen guardada",
+      addedBy: "Vogue viernes",
+      savedAt: "2026-11-20",
+      imagePath: "/seed/vogue/06.jpg",
+      notionUrl: VOGUE,
+      howToUse:
+        "Varias cadenas, un dije ovalado y un fleco negro en el hombro. Referencia de capas y de peso, útil cuando una correa o un detalle tiene que sentirse hecho a mano.",
+    }),
+    build({
+      id: "seed-vogue-07",
+      title: "Bolso de seda y pantalón parchado",
+      type: "outfit",
+      tags: ["Handbags", "Outfits", "Making"],
+      pillar: "Making",
+      source: "Vogue",
+      sourceUrl: "https://www.vogue.com/",
+      account: "Vogue",
+      origin: "Vogue · imagen guardada",
+      addedBy: "Vogue viernes",
+      savedAt: "2026-11-20",
+      imagePath: "/seed/vogue/07.jpg",
+      notionUrl: VOGUE,
+      howToUse:
+        "The making. Un bolso de tela estampada contra denim parchado. Sirve para ver una pieza blanda llevada en la mano, y el parche como idea de superficie.",
+    }),
+    build({
+      id: "seed-vogue-08",
+      title: "Chaqueta morada y bolso marrón",
+      type: "outfit",
+      tags: ["Outfits", "Handbags", "Eye"],
+      pillar: "Eye",
+      source: "Vogue",
+      sourceUrl: "https://www.vogue.com/",
+      account: "Vogue",
+      origin: "Vogue · imagen guardada",
+      addedBy: "Vogue viernes",
+      savedAt: "2026-11-20",
+      imagePath: "/seed/vogue/08.jpg",
+      notionUrl: VOGUE,
+      howToUse:
+        "Pasarela, de cuerpo entero. El bolso marrón cuelga del hombro y se lee contra el morado. Referencia de proporción: bolso mediano, no statement.",
+    }),
+    build({
+      id: "seed-dario",
+      title: "watch me make this bag / part 1",
+      type: "hook",
+      tags: ["Hooks", "Making", "Handbags", "Bolsos", "Texto en pantalla"],
+      pillar: "Making",
+      status: "Lista",
+      source: "Instagram",
+      sourceUrl: "https://www.instagram.com/dario_otis_/reel/DaInglCovNh/",
+      account: "dario_otis_",
+      origin: "Reporte 9 nov 2026 · también sixarev, sketch a pieza",
+      addedBy: "Rutina IG lunes",
+      savedAt: "2026-11-09",
+      imagePath: "/seed/ig/dario.png",
+      notionUrl: "https://app.notion.com/p/4130ebc757428187869cd1b150ed14af",
+      weekKey: "2026-W46",
+      used: true,
+      usedAt: "2026-11-12T16:00:00.000Z",
+      howToUse:
+        "Capítulo bolsos. En pantalla, “watch me make this bag” al inicio, con un pull-back desde un detalle. Luego sketch, tela y las primeras puntadas, y cerrar en el paso que sigue de verdad (“part 2: the lining”, o el que toque). Usa clips que ya tiene de la etapa del bolso.",
+    }),
+    build({
+      id: "seed-simstrikk",
+      title: "The lace / What I made with it",
+      type: "hook",
+      tags: ["Hooks", "Making", "Encaje"],
+      pillar: "Making",
+      status: "Lista",
+      source: "Instagram",
+      sourceUrl: "https://www.instagram.com/simstrikk/reel/DUEN_jgCCSM/",
+      account: "simstrikk",
+      origin: "Reporte 9 nov 2026 · capítulo knit and lace",
+      addedBy: "Rutina IG lunes",
+      savedAt: "2026-11-09",
+      notionUrl: "https://app.notion.com/p/4130ebc7574281e88f16fda5824d5053",
+      weekKey: "2026-W46",
+      howToUse:
+        "Dos beats nada más. Abrir con el encaje de la abuela a la luz de la ventana y “The lace”. Cortar a las manos cosiendo. Cerrar en la pieza con “What I made with it”, o en el siguiente paso si no está terminada. La primera línea del caption puede ser la historia real: “My grandmother kept this lace in a drawer for years.”",
+    }),
+    build({
+      id: "seed-pin-01",
+      title: "Bolso de cordones y ojales",
+      type: "outfit",
+      tags: ["Handbags", "Outfits", "Making"],
+      pillar: "Making",
+      source: "Pinterest",
+      sourceUrl: BOARD,
+      account: "dan1_velez",
+      origin: "Busy handbag",
+      addedBy: "Daniela",
+      savedAt: "2026-11-07",
+      imagePath: "/seed/pinterest/01.jpg",
+      notionUrl: ARCHIVE,
+      howToUse:
+        "The making. Cordón cruzado por ojales en las costuras del bolso. Sirve para mirar el ritmo del herraje, no para copiar la pieza.",
+    }),
+    build({
+      id: "seed-pin-02",
+      title: "Hobo plateado con anillas y lazos",
+      type: "imagen",
+      tags: ["Handbags", "Bolsos", "Hunt"],
+      pillar: "Hunt",
+      source: "Pinterest",
+      sourceUrl: BOARD,
+      account: "dan1_velez",
+      origin: "Busy handbag",
+      addedBy: "Daniela",
+      savedAt: "2026-11-07",
+      imagePath: "/seed/pinterest/02.jpg",
+      notionUrl: ARCHIVE,
+      howToUse:
+        "The hunt. Asa de anillas, lazos y una cadena corta. El gesto del metal, no el color exacto.",
+    }),
+    build({
+      id: "seed-pin-03",
+      title: "Media luna roja con púas",
+      type: "imagen",
+      tags: ["Handbags", "Bolsos", "Eye"],
+      pillar: "Eye",
+      source: "Pinterest",
+      sourceUrl: BOARD,
+      account: "dan1_velez",
+      origin: "Busy handbag",
+      addedBy: "Daniela",
+      savedAt: "2026-11-07",
+      imagePath: "/seed/pinterest/03.jpg",
+      notionUrl: ARCHIVE,
+      howToUse:
+        "The eye. Media luna de cuero rojo con púas doradas en el borde. Mirar el ritmo del metal, no la marca del bolso.",
+    }),
+    build({
+      id: "seed-pin-04",
+      title: "Piel con borde de crochet",
+      type: "detalle",
+      tags: ["Making", "Encaje", "Handbags"],
+      pillar: "Making",
+      source: "Pinterest",
+      sourceUrl: BOARD,
+      account: "dan1_velez",
+      origin: "Busy handbag",
+      addedBy: "Daniela",
+      savedAt: "2026-11-07",
+      imagePath: "/seed/pinterest/04.jpg",
+      notionUrl: ARCHIVE,
+      howToUse:
+        "The making, capítulo de encaje. Piel con un borde de crochet todavía en proceso: gancho y ovillo en el cuadro. La foto es el hacer, no el bolso terminado.",
+    }),
+    build({
+      id: "seed-pin-05",
+      title: "Hobo mantequilla, tres vistas",
+      type: "outfit",
+      tags: ["Handbags", "Outfits", "Eye"],
+      pillar: "Eye",
+      source: "Pinterest",
+      sourceUrl: BOARD,
+      account: "dan1_velez",
+      origin: "Busy handbag",
+      addedBy: "Daniela",
+      savedAt: "2026-11-07",
+      imagePath: "/seed/pinterest/05.jpg",
+      notionUrl: ARCHIVE,
+      weekKey: "2026-W47",
+      howToUse:
+        "Tres vistas del mismo hobo: negro, mantequilla y puesto. La nota en la foto habla de un cierre de anilla y una correa ancha. Sirve para silueta y caída, capítulo bolsos.",
+    }),
+    build({
+      id: "seed-pin-06",
+      title: "Mini camel, asa de cuentas",
+      type: "detalle",
+      tags: ["Handbags", "Bolsos", "Eye"],
+      pillar: "Eye",
+      source: "Pinterest",
+      sourceUrl: BOARD,
+      account: "dan1_velez",
+      origin: "Busy handbag",
+      addedBy: "Daniela",
+      savedAt: "2026-11-07",
+      imagePath: "/seed/pinterest/06.jpg",
+      notionUrl: ARCHIVE,
+      howToUse:
+        "Ojales en fila y un asa de cuentas negras y crema. Un detalle para un bolso chico o para una correa. El ritmo del metal contra la piel.",
+    }),
+  ];
+}

@@ -22,9 +22,13 @@ export default async function LoginPage({
           <p className="logo">studio.dvc</p>
           <span className="brand-tag">Insights</span>
         </div>
-        <h1>Analítica de Instagram</h1>
+        <h1>Studio DVC</h1>
         <p className="quiet">Página privada. Entra con la contraseña de la app.</p>
-        {query.error ? <p className="error">Esa contraseña no es. Prueba otra vez.</p> : null}
+        {query.error === "2" ? (
+          <p className="error">Demasiados intentos. Espera 15 minutos.</p>
+        ) : query.error ? (
+          <p className="error">Esa contraseña no es. Prueba otra vez.</p>
+        ) : null}
         <form method="post" action="/api/login">
           <input type="hidden" name="next" value={next} />
           <label>
