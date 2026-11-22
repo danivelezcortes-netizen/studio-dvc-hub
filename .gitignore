@@ -1,6 +1,11 @@
 node_modules
+.next
 dist
-.DS_Store
-*.local
-.vite
+out
+.vercel
+.env
+.env.local
+.env*.local
+.ig_token
 *.tsbuildinfo
+.DS_Store
