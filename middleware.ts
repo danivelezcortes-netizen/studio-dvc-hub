@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { SESSION_COOKIE, passwordsMatch, readBasicPassword, sessionIsValid } from './lib/auth';
+import { SESSION_COOKIE, sessionIsValid } from './lib/auth';
 
 export async function middleware(request: NextRequest) {
   const password = process.env.APP_PASSWORD;
@@ -9,9 +9,6 @@ export async function middleware(request: NextRequest) {
       headers: { 'content-type': 'text/plain; charset=utf-8' },
     });
   }
-
-  const basic = readBasicPassword(request.headers.get('authorization'));
-  if (basic && passwordsMatch(basic, password)) return NextResponse.next();
 
   const session = request.cookies.get(SESSION_COOKIE)?.value;
   if (await sessionIsValid(session, password)) return NextResponse.next();
@@ -24,5 +21,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|login|api/login).*)'],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|login|api/login|api/ingest).*)'],
 };

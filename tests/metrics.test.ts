@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { passwordsMatch, signSession } from '@/lib/auth';
+import { passwordsMatch, sessionIsValid, signSession } from '@/lib/auth';
 import { csvNumber, parseCsv } from '@/lib/csv';
 import { formatPosted, slotForMinutes } from '@/lib/format';
 import { loadFixture } from '@/lib/fixture';
@@ -95,8 +95,9 @@ describe('secrets', () => {
     expect(passwordsMatch('studio', 'studio')).toBe(true);
     expect(passwordsMatch('studio', 'studio ')).toBe(false);
     const token = await signSession('studio');
-    expect(passwordsMatch(token, await signSession('studio'))).toBe(true);
-    expect(passwordsMatch(token, await signSession('otra'))).toBe(false);
+    expect(token.includes('studio')).toBe(false);
+    expect(await sessionIsValid(token, 'studio')).toBe(true);
+    expect(await sessionIsValid(token, 'otra')).toBe(false);
   });
 });
 

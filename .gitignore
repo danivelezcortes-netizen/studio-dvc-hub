@@ -7,5 +7,7 @@ out
 .env.local
 .env*.local
 .ig_token
+data/board.json
+data/uploads
 *.tsbuildinfo
 .DS_Store

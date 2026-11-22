@@ -1,8 +1,20 @@
 import type { ReactNode } from 'react';
 import { sectionLinks } from './Dashboard';
 
-export function Shell({ children }: { children: ReactNode }) {
-  const links = sectionLinks();
+const PRODUCT = [
+  ['/', 'Inicio', 'home'],
+  ['/analitica', 'Analítica', 'analitica'],
+  ['/inspo', 'Inspo', 'inspo'],
+] as const;
+
+export function Shell({
+  active,
+  children,
+}: {
+  active: 'home' | 'analitica' | 'inspo';
+  children: ReactNode;
+}) {
+  const sections = active === 'analitica' ? sectionLinks() : [];
   return (
     <div className="app">
       <a className="skip" href="#contenido">
@@ -10,14 +22,20 @@ export function Shell({ children }: { children: ReactNode }) {
       </a>
       <header className="topbar">
         <div className="brand">
-          <a className="logo" href="#contenido">
+          <a className="logo" href="/">
             studio.dvc
           </a>
-          <span className="brand-tag">Insights</span>
         </div>
-        <nav aria-label="Secciones">
+        <nav aria-label="Estudio">
           <ul>
-            {links.map(([id, label]) => (
+            {PRODUCT.map(([href, label, id]) => (
+              <li key={id}>
+                <a className="nav-pill" href={href} aria-current={active === id ? 'page' : undefined}>
+                  {label}
+                </a>
+              </li>
+            ))}
+            {sections.map(([id, label]) => (
               <li key={id}>
                 <a className="nav-pill" href={`#${id}`}>
                   {label}
@@ -32,7 +50,9 @@ export function Shell({ children }: { children: ReactNode }) {
           </button>
         </form>
       </header>
-      <main id="contenido">{children}</main>
+      <main id="contenido" className={active === 'inspo' ? 'flush' : undefined}>
+        {children}
+      </main>
     </div>
   );
 }

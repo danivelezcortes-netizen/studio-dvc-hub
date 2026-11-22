@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
-import { SESSION_COOKIE, passwordsMatch, signSession } from '@/lib/auth';
+import { SESSION_COOKIE, SESSION_MS, passwordsMatch, signSession } from '@/lib/auth';
+import { clientIp, loginGate } from '@/lib/login-limit';
+
+export const runtime = 'nodejs';
 
 export async function POST(request: Request) {
   const password = process.env.APP_PASSWORD;
@@ -10,10 +13,12 @@ export async function POST(request: Request) {
   const given = String(form.get('password') ?? '');
   const next = safeNext(String(form.get('next') ?? '/'));
   const url = new URL(next, request.url);
-  if (!passwordsMatch(given, password)) {
+  const passwordOk = passwordsMatch(given, password);
+  const gate = await loginGate(clientIp(request.headers.get('x-forwarded-for')), passwordOk);
+  if (gate === 'limited' || !passwordOk) {
     url.pathname = '/login';
     url.search = '';
-    url.searchParams.set('error', '1');
+    url.searchParams.set('error', gate === 'limited' ? '2' : '1');
     url.searchParams.set('next', next);
     return NextResponse.redirect(url, 303);
   }
@@ -23,7 +28,7 @@ export async function POST(request: Request) {
     sameSite: 'lax',
     secure: process.env.NODE_ENV === 'production',
     path: '/',
-    maxAge: 60 * 60 * 24 * 30,
+    maxAge: SESSION_MS / 1000,
   });
   return response;
 }

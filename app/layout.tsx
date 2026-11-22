@@ -18,8 +18,8 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Studio DVC · analítica de Instagram',
-  description: 'Tablero privado de @studio.dvc.',
+  title: 'Studio DVC',
+  description: 'Analítica e inspiración de @studio.dvc.',
   robots: { index: false, follow: false },
 };
 
