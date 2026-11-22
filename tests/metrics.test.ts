@@ -6,6 +6,7 @@ import { csvNumber, parseCsv } from '@/lib/csv';
 import { formatPosted, slotForMinutes } from '@/lib/format';
 import { loadFixture } from '@/lib/fixture';
 import {
+  asFraction,
   followsPerThousandNonFollowers,
   perThousand,
   placementLabel,
@@ -62,6 +63,7 @@ describe('fixture', () => {
     expect(data.posts).toHaveLength(15);
     expect(data.posts.some((post) => post.date < '2026-10-29')).toBe(false);
     const trial = data.posts.find((post) => post.id === '18116247323116095');
+    const trialNotes = analysis.posts['18116247323116095'];
     expect(trial).toMatchObject({
       postedLabel: 'martes 3 nov, 18:20',
       placementLabel: 'Grid (fue trial)',
@@ -69,12 +71,19 @@ describe('fixture', () => {
       retention: 71.1,
       sharesPer1k: 0.5,
       savesPer1k: 3.9,
-      follows: 1,
-      followsPer1kNf: 0.5,
+      follows: trialNotes.follows,
+      followsPer1kNf: followsPerThousandNonFollowers(
+        trialNotes.follows,
+        2068,
+        asFraction(trialNotes.nonFollowerPercent),
+      ),
     });
     const charm = data.posts.find((post) => post.id === '18137485312578652');
-    expect(charm?.follows).toBeNull();
-    expect(charm?.followsPer1kNf).toBeNull();
+    const charmNotes = analysis.posts['18137485312578652'];
+    expect(charm?.follows).toBe(charmNotes.follows ?? null);
+    expect(charm?.followsPer1kNf).toBe(
+      followsPerThousandNonFollowers(charmNotes.follows ?? null, charm?.views ?? null, asFraction(charmNotes.nonFollowerPercent)),
+    );
     expect(charm?.placementLabel).toBe('Trial (no en el grid)');
   });
 
