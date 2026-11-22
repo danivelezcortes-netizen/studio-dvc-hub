@@ -35,7 +35,7 @@ npm run dev
 
 Abre http://localhost:3000 e introduce `APP_PASSWORD`. El inicio deja elegir Analítica o Inspo.
 
-En local, sin `DATABASE_URL`, Inspo usa `data/board.json` y `data/uploads`. Ese archivo no se despliega. En producción esas escrituras responden 503: hacen falta Neon, Blob privado y Notion. La semilla visual está en `public/seed`. Cinco fotos de esa semilla no cupieron en la copia (`dario`, `intocarry`, `lart`, `linda`, `soulful`): el origen las corta al pasar de 256 KB. El resto sí está.
+En local, sin `DATABASE_URL`, Inspo usa `data/board.json` y `data/uploads`. Ese archivo no se despliega. En producción esas escrituras responden 503: hacen falta Neon, Blob privado y Notion. La semilla visual está en `public/seed`.
 
 ```bash
 npm test
