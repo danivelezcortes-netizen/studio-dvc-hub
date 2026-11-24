@@ -1,9 +1,10 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { DateRangeFilter, rangeForPreset, type DatePreset, type DateRange } from './DateRangeFilter';
 import { Dash } from './Dash';
 import { Thumb } from './Thumb';
-import { formatDecimal, formatInt, formatPercent } from '@/lib/format';
+import { formatDateKey, formatDecimal, formatInt, formatPercent } from '@/lib/format';
 import type { PostView } from '@/lib/types';
 import { placementClass } from '@/lib/placement';
 
@@ -21,10 +22,39 @@ const OPTIONS: { value: SortKey; label: string }[] = [
 
 export function PostsTable({ posts }: { posts: PostView[] }) {
   const [sort, setSort] = useState<SortKey>('fecha');
-  const rows = useMemo(() => sortPosts(posts, sort), [posts, sort]);
+  const [preset, setPreset] = useState<DatePreset>('relaunch');
+  const [range, setRange] = useState<DateRange>(() => rangeForPreset('relaunch'));
+  const filtered = useMemo(
+    () => posts.filter((post) => post.date >= range.from && post.date <= range.to),
+    [posts, range],
+  );
+  const rows = useMemo(() => sortPosts(filtered, sort), [filtered, sort]);
+
+  function applyPreset(next: Exclude<DatePreset, 'custom'>) {
+    setPreset(next);
+    setRange(rangeForPreset(next));
+  }
+
+  function applyRange(next: DateRange) {
+    setPreset('custom');
+    setRange(next);
+  }
+
+  const summary =
+    filtered.length === posts.length
+      ? `${posts.length} ${posts.length === 1 ? 'publicación' : 'publicaciones'} del ${formatDateKey(range.from)} al ${formatDateKey(range.to)}.`
+      : `${filtered.length} de ${posts.length} ${posts.length === 1 ? 'publicación' : 'publicaciones'}, del ${formatDateKey(range.from)} al ${formatDateKey(range.to)}.`;
 
   return (
     <div>
+      <DateRangeFilter preset={preset} range={range} onPreset={applyPreset} onRange={applyRange} />
+      <p className="date-filter-summary">{summary}</p>
+      {rows.length === 0 ? (
+        <p className="date-filter-empty">
+          No hay publicaciones en esta franja. Prueba con otro rango o vuelve al relanzamiento.
+        </p>
+      ) : (
+      <>
       <label className="sort">
         <span>Ordenar</span>
         <select value={sort} onChange={(event) => setSort(event.target.value as SortKey)}>
@@ -118,6 +148,8 @@ export function PostsTable({ posts }: { posts: PostView[] }) {
           </article>
         ))}
       </div>
+      </>
+      )}
     </div>
   );
 }

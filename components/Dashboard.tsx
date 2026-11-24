@@ -160,7 +160,7 @@ export function Dashboard({ data }: { data: DashboardData }) {
       </section>
 
       <section id="todas" className="block">
-        <h3>Todas las publicaciones desde el 29 oct</h3>
+        <h3>Todas las publicaciones</h3>
         <div className="text-card">
           <p>
             Día y hora en hora de París. Visualizaciones, compartidos, guardados y retención salen de esta lectura. Los follows

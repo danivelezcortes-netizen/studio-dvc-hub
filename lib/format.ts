@@ -127,6 +127,12 @@ export function formatParisStamp(date: Date): string {
   return `${parts.day} ${MONTHS[parts.month - 1]} ${parts.year}, ${String(parts.hour).padStart(2, '0')}:${String(parts.minute).padStart(2, '0')} hora de París`;
 }
 
+export function formatDateKey(isoDate: string): string {
+  const [year, month, day] = isoDate.split('-').map(Number);
+  if (!year || !month || !day) return isoDate;
+  return `${day} ${MONTHS[month - 1]} ${year}`;
+}
+
 export function slotForMinutes(minutes: number): { id: string; label: string } {
   const match = SLOTS.find((slot) => minutes >= slot.start && minutes < slot.end);
   if (match) return { id: match.id, label: match.label };
