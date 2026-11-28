@@ -1,80 +1,80 @@
 {
-  "updatedAtLabel": "22 nov 2026, 18:19 hora de París",
-  "followersNote": "267 al 22 nov; 268 el 21 nov, 267 el 15 nov y 258 en la semana 1",
-  "howToRead": "Solo cuentan los posts desde el 29 oct 2026. Un formato se juzga a partir de 6 publicaciones y un pilar a partir de 4 semanas; todavía no estamos ahí. Las horas están en hora de París, tomadas del timestamp de la API. Instagram tarda unos 2 días en entregar follows. Los textos de esta página (por qué, aprendizajes y recomendaciones) salen de data/analysis.json y se actualizan a mano. Un guión significa que el dato no está, no que sea cero.",
-  "trialExplainer": "La API no tiene un campo is_trial ni trial_params de lectura (esos solo existen al publicar). El campo documentado es is_shared_to_feed: true si el Reel puede salir en el Feed y en la pestaña Reels; false si solo puede salir en Reels, no en el grid. El trial del martes 3 nov, 18:20, confirmado en Notion, hoy tiene is_shared_to_feed=true porque se compartió al grid; la API ya no lo señala como trial. Ese «fue trial» vive en este archivo, no se deduce solo.",
-  "bestCaption": "Los tres Reels con más visualizaciones entre los que ya tienen al menos 6 días. Los tres están hoy en el grid y coinciden con la mejor retención a 3 segundos.",
-  "worstCaption": "Entre posts con 7 días o más. Los tres tienen is_shared_to_feed=false (no están en el grid): un alcance bajo no prueba que el tema no funcione si luego se comparte al grid. Dejo fuera los del 17, 19 y 22 nov, que tienen menos de 7 días. Los tres tienen 0 follows y 100 % de visualizaciones de no seguidores (lectura del 22 nov).",
+  "updatedAtLabel": "28 nov 2026, 10:34 hora de París",
+  "followersNote": "281 al 28 nov, 10:34, igual que el 26 nov a las 22:50. Antes: 278 el 25 nov a las 15:04, 270 el 24 nov, 268 el 21 nov, 267 el 22 nov, 267 el 15 nov y 258 en la semana 1. Cuentas que sigue: 56 hoy, 57 el 25 nov a las 15:04 y 11 el 21–22 nov.",
+  "howToRead": "Solo cuentan los posts desde el 29 oct 2026. Un formato se juzga a partir de 6 publicaciones y un pilar a partir de 4 semanas; aún no hay un veredicto claro. Las horas están en hora de París, tomadas del timestamp de la API. Instagram tarda unos 2 días en entregar follows. Los textos de esta página (por qué, aprendizajes y recomendaciones) salen de data/analysis.json y se actualizan a mano. Un guión significa que el dato no está, no que sea cero. En posts con menos de 7 días, las cifras van etiquetadas como lectura del 28 nov.",
+  "trialExplainer": "La API no tiene un campo is_trial ni trial_params de lectura (esos solo existen al publicar). El campo documentado es is_shared_to_feed: true si el Reel puede salir en el Feed y en la pestaña Reels; false si solo puede salir en Reels, no en el grid. El trial del martes 3 nov, 18:20, confirmado en Notion, hoy tiene is_shared_to_feed=true porque se compartió al grid; la API ya no lo señala como trial. El del sábado 7 nov, 21:10, también nació fuera del grid (sigue así en los snapshots del 21 al 25 nov) y pasó a is_shared_to_feed=true entre el 25 y el 26 nov. Ese «fue trial» vive en este archivo, no se deduce solo.",
+  "bestCaption": "Los tres Reels con más visualizaciones entre los que ya tienen al menos 6 días. Los tres están hoy en el grid y coinciden con la mejor retención a 3 segundos. Dejo fuera los dos trials del jueves 26 nov, que tienen unas 40 horas de vida: van en la mención, con cifras de la lectura del 28 nov.",
+  "worstCaption": "Entre posts con 7 días o más. El del tío Gilberto y el del domingo 8 nov, 18:35, siguen fuera del grid. El del sábado 7 nov, 21:10, pasó al grid entre el 25 y el 26 nov y aun así no viajó. Dejo fuera los del 22, 24 y 26 nov, que tienen menos de 7 días.",
   "best": [
     {
       "mediaId": "18116247323116095",
-      "why": "Por qué funcionó: es el Reel con más visualizaciones (2.073), más guardados (8) y la mejor retención a 3 s (71,1 %). Se publicó el martes 3 nov, 18:20. Nació como trial (Notion) y hoy está en el grid (is_shared_to_feed=true), después de compartirse hacia el 15 nov. En la lectura de Insights del 22 nov: 2 follows y 96,7 % de visualizaciones de no seguidores (1,0 follows / 1.000)."
+      "why": "Por qué funcionó: sigue siendo el Reel con más visualizaciones (2.109), más guardados (8) y la mejor retención a 3 s (71,0 %) entre los que ya tienen 6 días o más. Se publicó el martes 3 nov, 18:20. Nació como trial (Notion) y hoy está en el grid (is_shared_to_feed=true), después de compartirse hacia el 15 nov. En la lectura de Insights del 22 nov: 2 follows y 96,7 % de visualizaciones de no seguidores (1,0 follows / 1.000). Desde el 22 nov sumó 33 visualizaciones y 2 likes."
     },
     {
       "mediaId": "18062028770555516",
-      "why": "Por qué funcionó: segunda mejor retención (65,0 %) y segundo en visualizaciones (1.688). Es el único post de la mañana desde el relanzamiento (domingo 15 nov, 10:35) y está en el grid. Lo que no hizo: 0 follows con 98,7 % de no seguidores (lectura del 22 nov). Un solo caso no cierra el test de horario."
+      "why": "Por qué funcionó: segunda mejor retención entre los de 6 días o más (64,6 %) y segundo en visualizaciones (1.713). Es el único post de la mañana desde el relanzamiento (domingo 15 nov, 10:35) y está en el grid. Lo que no hizo: 0 follows con 98,7 % de no seguidores (lectura del 22 nov). Un solo caso no cierra el test de horario. Desde el 22 nov sumó 25 visualizaciones."
     },
     {
       "mediaId": "18116426798115874",
-      "why": "Por qué funcionó: retención 62,2 % y 75 likes, el máximo de la cuenta. Se publicó el jueves 5 nov, 18:25, y está en el grid. El caption tutorial tenía 0 compartidos el 15 nov y ahora tiene 2 (1,3 / 1.000). Los guardados (3,1 / 1.000) están en línea con otros Reels buenos, aún no prueban que el formato de pasos gane por sí solo. 1 follow y 97,7 % no seguidores (22 nov)."
+      "why": "Por qué funcionó: retención 61,8 % y 77 likes, el máximo de la cuenta. Se publicó el jueves 5 nov, 18:25, y está en el grid. Tiene 2 compartidos (1,2 / 1.000). Los guardados (3,1 / 1.000) están en línea con otros Reels buenos, aún no prueban que el formato de pasos gane por sí solo. 1 follow y 97,7 % no seguidores (Insights, 22 nov). Desde el 22 nov sumó 17 visualizaciones y 2 likes."
     }
   ],
   "worst": [
     {
       "mediaId": "17912857866309118",
-      "why": "Por qué no llegó: 111 visualizaciones y 38,2 % de retención, el alcance más bajo del relanzamiento. Es el Reel del tío Gilberto, publicado el jueves 12 nov, 18:35, y no está en el grid (is_shared_to_feed=false). El tema no basta para explicarlo: el trial del martes 3 nov, 18:20, que luego pasó al grid, es el que mejor funciona. 0 follows, 100 % no seguidores (Insights, 22 nov)."
+      "why": "Por qué no llegó: 111 visualizaciones y 38,2 % de retención, el alcance más bajo del relanzamiento. Sigue igual que el 22 nov. Es el Reel del tío Gilberto, publicado el jueves 12 nov, 18:35, y no está en el grid (is_shared_to_feed=false). El tema no basta para explicarlo: el trial del martes 3 nov, 18:20, que luego pasó al grid, es el que mejor funciona, y los dos trials del 26 nov ya viajan con buena retención (lectura del 28 nov, aún con menos de 7 días). 0 follows, 100 % no seguidores (Insights, 22 nov)."
     },
     {
       "mediaId": "17964385719208363",
-      "why": "Por qué no llegó: 158 visualizaciones, 0 likes, 0 guardados y 0 compartidos. Se publicó el domingo 8 nov, 18:35, fuera del grid. El mismo domingo a las 22:50 hubo otro Reel (346 visualizaciones, 1 compartido), también fuera del grid. Retención media (47,3 %), sin el gancho de los que sí viajaron. 0 follows, 100 % no seguidores (Insights, 22 nov)."
+      "why": "Por qué no llegó: 159 visualizaciones, 0 likes, 0 guardados y 0 compartidos. Se publicó el domingo 8 nov, 18:35, fuera del grid. El mismo domingo a las 22:50 hubo otro Reel (346 visualizaciones, 1 compartido), también fuera del grid. Retención media (46,9 %), sin el gancho de los que sí viajaron. 0 follows, 100 % no seguidores (Insights, 22 nov)."
     },
     {
       "mediaId": "17877615198588064",
-      "why": "Por qué no llegó: la retención más baja de todos, 25,2 % (74,8 % de skip). Se publicó el sábado 7 nov, 21:10, no está en el grid, y se quedó en 194 visualizaciones. No es el Reel del tío (ese es el del jueves 12 nov, 18:35). Es el único post de un sábado. 0 follows, 100 % no seguidores (Insights, 22 nov)."
+      "why": "Por qué no llegó: la retención más baja de todos, 26,2 % (73,8 % de skip). Se publicó el sábado 7 nov, 21:10, nació fuera del grid y pasó a is_shared_to_feed=true entre el 25 y el 26 nov. Aun así se quedó en 198 visualizaciones (solo 4 más que el 22 nov). Ir al grid no bastó. Es el único post de un sábado. 0 follows, 100 % no seguidores (Insights, 22 nov, todavía fuera del grid)."
     }
   ],
-  "bestMention": "Mención: el tutorial del charm del martes 17 nov, 19:15, lleva 1.583 visualizaciones en 5 días, casi al nivel de Kinda chic, con 3 guardados, 1 compartido y 0 follows (97,6 % no seguidores, 22 nov), pero no está en el grid (is_shared_to_feed=false) y su retención es 47,9 %, más baja que la de estos tres. Fue el mejor post de la semana 4. El Reel de hábitos del martes 10 nov, 19:14 (1.294 visualizaciones, retención 60,9 %, en el grid) sigue siendo de los que mejor convierten: 2 follows en la lectura del 22 nov, 1,6 / 1.000 visualizaciones de no seguidores.",
-  "worstMention": "Si miramos solo el grid, el carrusel del domingo 1 nov, 20:05, es el que menos llegó a extraños: 6,3 % de no seguidores en la lectura del 22 nov, 270 visualizaciones, 97 de alcance, 0 guardados, 0 compartidos y 0 follows. Es el único carrusel desde el relanzamiento, así que todavía no hay datos suficientes para juzgar el formato. En la semana 4, el que menos llegó fue el trial del martes 17 nov, 20:05 («Some things are too meaningful to keep in a drawer»): 213 visualizaciones en 5 días, 0 guardados, 0 compartidos, 40,2 % de retención.",
-  "scheduleIntro": "Horas en París. Mañana es 06:00–11:59, tarde 12:00–17:59, noche 18:00–21:59 y noche tardía 22:00–05:59. Las tablas de abajo se calculan con las publicaciones de esta lectura. Los párrafos son la nota semanal.",
+  "bestMention": "Mención, lectura del 28 nov, con menos de 7 días: los dos trials del jueves 26 nov ya están al nivel de los mejores del grid y no están en el grid. El de Winnicott (jueves 26 nov, 18:30) lleva 1.838 visualizaciones, 70,4 % de retención y 6 guardados (3,3 / 1.000), 0 compartidos. El de flow / Csikszentmihalyi (jueves 26 nov, 17:55) lleva 1.794 visualizaciones, 62,8 % de retención y 3 guardados (1,7 / 1.000), 0 compartidos. Casi todas esas visualizaciones llegaron el mismo jueves (la cuenta tuvo 3.541 ese día); desde el 26 nov a las 22:50 sumaron 239 y 51. El tutorial del charm del martes 17 nov, 19:15, ya tiene 11 días y 1.584 visualizaciones (solo 1 más que el 22 nov), con 3 guardados, 1 compartido y 0 follows (97,6 % no seguidores, 22 nov); no está en el grid y su retención es 48,0 %. El Reel de hábitos del martes 10 nov, 19:14 (1.313 visualizaciones, retención 60,8 %, en el grid) sigue siendo de los que mejor convierten en la lectura del 22 nov: 2 follows, 1,6 / 1.000 visualizaciones de no seguidores.",
+  "worstMention": "Si miramos solo el grid, el carrusel del domingo 1 nov, 20:05, es el que menos llegó a extraños: 6,3 % de no seguidores en la lectura del 22 nov, ahora 286 visualizaciones, 101 de alcance, 0 guardados, 0 compartidos y 0 follows. Ya hay un segundo carrusel, el del martes 24 nov, 18:35: 262 visualizaciones, 107 de alcance, 9 compartidos (34,4 / 1.000), 0 guardados, 15 likes, 8 comentarios y 0 follows (API, 28 nov). Tiene 4 días, así que son cifras de esta lectura. Con n = 2 aún no hay datos suficientes para juzgar el formato. Entre los que tienen menos de 7 días, el que menos llegó es el trial del domingo 22 nov, 14:35: 141 visualizaciones y 28,8 % de retención, a 6 días.",
+  "scheduleIntro": "Horas en París. Mañana es 06:00–11:59, tarde 12:00–17:59, noche 18:00–21:59 y noche tardía 22:00–05:59. Las tablas de abajo se calculan con las publicaciones de esta lectura. Los párrafos son la nota de esta pasada.",
   "scheduleNotes": [
-    "No hay ningún post en lunes, miércoles ni viernes, así que el horario inicial (lun / mie / vie hacia las 10:00) no se ha podido comparar desde el relanzamiento.",
-    "13 de 16 posts salieron de noche (18:00–21:59). Solo hay uno de mañana: el del domingo 15 nov, 10:35, en el grid, con 1.688 visualizaciones y 65,0 % de retención, el segundo mejor Reel, pero 0 follows. n = 1, así que no basta para decir que la mañana funciona mejor. El único de tarde (12:00–17:59) es el trial de hoy, domingo 22 nov, 14:35, con horas de vida. El único de noche tardía es el trial del domingo 8 nov, 22:50 (346 visualizaciones, 54,9 %).",
-    "La diferencia más grande no es el día ni la hora, sino estar o no en el grid. Fuera del grid, 9 de 10 posts quedan por debajo de 350 visualizaciones; la excepción es el charm del martes 17 nov, 19:15, con 1.583. Entre los 5 Reels que sí están en el grid, los dos martes (3 nov, 18:20 y 10 nov, 19:14) promedian 1.684 visualizaciones y 66,0 % de retención; es una muestra de 2, todavía no un patrón.",
-    "Dos Reels el mismo día (8, 12, 17 y 19 nov, todos fuera del grid): el primero de cada par tuvo 158, 111, 1.583 y 209 visualizaciones; el segundo 346, 173, 213 y 267. Solo hay dos trials publicados solos en un día (7 y 22 nov), así que no hay base para decir si publicar dos el mismo día ayuda o resta."
+    "Sigue sin haber ningún post en lunes, miércoles ni viernes, así que el horario inicial (lun / mie / vie hacia las 10:00) no se ha podido comparar desde el relanzamiento. Van 20 posts desde el 29 oct.",
+    "16 de 20 posts salieron de noche (18:00–21:59). Solo hay uno de mañana: el del domingo 15 nov, 10:35, en el grid, con 1.713 visualizaciones y 64,6 % de retención, el segundo mejor Reel entre los de 6 días o más, pero 0 follows. n = 1, así que no basta para decir que la mañana funciona mejor. Ahora hay dos de tarde (12:00–17:59): el trial del domingo 22 nov, 14:35 (141 visualizaciones, 28,8 %, a 6 días) y el trial de flow del jueves 26 nov, 17:55 (1.794 visualizaciones, 62,8 %, lectura del 28 nov, unas 40 horas). El único de noche tardía es el trial del domingo 8 nov, 22:50 (346 visualizaciones, 54,9 %).",
+    "Ya no se puede decir que la diferencia más grande sea solo estar o no en el grid. Fuera del grid, 9 de 12 Reels quedan por debajo de 350 visualizaciones; las excepciones son el charm del martes 17 nov, 19:15 (1.584, ya con 11 días y casi sin visualizaciones nuevas desde el 22 nov) y los dos trials del jueves 26 nov (1.794 y 1.838, lectura del 28 nov, unas 40 horas). El del sábado 7 nov, 21:10, pasó al grid hacia el 26 nov y se quedó en 198 visualizaciones. Entre los 6 Reels que sí están en el grid, los dos martes (3 nov, 18:20 y 10 nov, 19:14) siguen viéndose fuertes, pero es una muestra de 2, todavía no un patrón. No trato grid frente a trial como un veredicto de formato.",
+    "Dos Reels el mismo día (8, 12, 17, 19 y 26 nov, todos fuera del grid en el momento de publicar): el primero de cada par tuvo 159, 111, 1.584, 209 y 1.794 visualizaciones; el segundo 346, 173, 213, 267 y 1.838. El 26 nov los dos funcionaron bien (cifras a unas 40 horas). Sigue sin haber base para decir si publicar dos el mismo día ayuda o resta. El 24 nov fue un carrusel y un Reel, no dos Reels."
   ],
   "followsCaption": "Solo los días con movimiento. FOLLOWER = follows, NON_FOLLOWER = unfollows. Instagram no da los nombres.",
   "followsNotes": [
-    "8 de los 10 unfollows cayeron el jueves 29 oct, el día del relanzamiento. Hubo uno el 24 oct (antes de volver a publicar) y otro el 5 nov. Desde entonces, ninguno. Encaja con seguidores antiguos que se fueron al ver el contenido nuevo, no con una fuga que siga activa.",
-    "Los 14 follows sí llegan repartidos en noviembre, a menudo en los días de un Reel que después vimos con follows en Notion (martes 3 nov, jueves 5 nov, martes 10 nov y el miércoles 11). La API no atribuye un follow a un post, así que eso es una coincidencia de fechas, no una atribución. Del 16 al 20 nov hubo 0 follows y 0 unfollows: la primera semana sin follows desde el relanzamiento, y también la primera sin ningún Reel en el grid. El 21 y 22 nov aún no tienen datos."
+    "8 de los unfollows cayeron el jueves 29 oct, el día del relanzamiento. Hubo uno el 5 nov y otro el 22 nov (ese día la cuenta pasó de 268 a 267). En los datos diarios del 23 al 26 nov hay 0 unfollows. El 27 y el 28 nov aún no están (Instagram tarda unos 2 días). El recuento en vivo es 281 hoy a las 10:34, igual que el 26 nov a las 22:50: no ha bajado en estas 36 horas.",
+    "Del 23 al 26 nov la API registra 14 follows (2, 3, 8 y 1) y 0 unfollows. El salto se ve en el recuento: 268 el 21 nov, 267 el 22 nov, 270 el 24 nov, 278 el 25 nov a las 15:04 y 281 el 26 nov a las 22:50, que se mantiene hoy. Hacia el 24–25 nov siguió unas 46 cuentas de su nicho (seguía 11 el 21–22 nov, 28 el 24 nov a las 22:57, 57 el 25 nov a las 15:04 y 56 hoy). El ritmo habitual de los Reels era unos +6 netos al mes. Los 8 follows del 25 nov llegaron después de esa oleada de follows y también después de los posts del martes 24 nov (el carrusel con 9 compartidos y el Reel de La Trouvaille). La API no atribuye un follow a un post, así que no puedo separar follow-backs del contenido. De momento esos seguidores se quedan: 281 se sostiene desde el 26 nov a las 22:50 y no hay unfollows diarios del 23 al 26 nov. Faltan todavía el 27 y el 28 nov en la serie diaria."
   ],
   "learnings": [
-    "Semana 4 (16 a 22 nov): 2.843 visualizaciones (semana 3: 3.143), 2.099 de alcance, 93,9 % de visualizaciones de no seguidores, 2 compartidos (0,7 / 1.000), 7 guardados (2,5 / 1.000), 0 follows (16 a 20 nov), 11 visitas al perfil. Los cinco posts fueron trials fuera del grid; retención media a 3 s de los cuatro con 3 días o más: 41,7 % (semana 3: 55,1 %).",
-    "Los tres Reels de grid que más viajaron son también los tres con mejor retención a 3 segundos: martes 3 nov, 18:20 (71,1 %), domingo 15 nov, 10:35 (65,0 %) y jueves 5 nov, 18:25 (62,2 %). El del sábado 7 nov, 21:10, con 25,2 %, se quedó en 194 visualizaciones y no está en el grid. Es un patrón claro en estos 16 posts, no una prueba de causa.",
-    "Follows por post (Insights, 22 nov): los 6 vienen de Reels del grid: jueves 29 oct (1), martes 3 nov (2), jueves 5 nov (1) y martes 10 nov (2), en total 0,9 follows / 1.000 visualizaciones de no seguidores. Los 9 trials fuera del grid con 3 días o más suman 0 follows en unas 3.216 visualizaciones de no seguidores, incluido el charm del 17 nov (1.583). El del domingo 15 nov, en el grid, también tiene 0. Grid tiene 5 Reels, así que aún es un patrón, no un veredicto.",
-    "Los Reels llegan sobre todo a extraños: 91 % de las visualizaciones de la cuenta en 30 días, y 91–100 % en cada Reel en la lectura de Insights del 22 nov. El carrusel del domingo 1 nov, 20:05, es la excepción: 6,3 % de no seguidores.",
-    "Los compartidos ya no son cero. La API del 22 nov suma 8 en 30 días, todos en Reels. Las tasas más altas: jueves 29 oct, 19:15 (3,3 / 1.000, 2 compartidos), domingo 8 nov, 22:50 (2,9 / 1.000, 1 compartido) y jueves 5 nov, 18:25 (1,3 / 1.000, 2 compartidos). Siguen siendo pocos.",
-    "El test de caption tutorial (jueves 5 nov, 18:25) no tiene un ganador claro: 3,1 guardados / 1.000, muy cerca del del martes 3 nov, 18:20 (3,9) y del domingo 15 nov, 10:35 (3,0).",
-    "Día y hora: la muestra es pequeña y está desequilibrada (casi todo de noche; cero posts en lunes, miércoles y viernes). Lo que sí se ve está en la sección «Día y hora vs rendimiento», como observación, no como regla.",
-    "La misma caption («Some things are too meaningful to keep in a drawer») salió dos veces como trial: martes 17 nov, 20:05 (213 visualizaciones, 40,2 %) y jueves 19 nov, 19:40 (267, 31,9 %). Las dos retuvieron menos que la media de los trials (43,2 %) y sumaron 1 guardado y 0 compartidos. n = 2: observación, no regla.",
-    "Los unfollows se concentraron el jueves 29 oct, el día del relanzamiento. No hay señal de que la cuenta esté perdiendo gente ahora."
+    "Lectura del sábado 28 nov, 10:34. La semana 5 (23 a 29 nov) se cierra mañana: del 23 al 28 nov la cuenta lleva 4.358 visualizaciones, 2.958 de alcance, 14 compartidos y 18 guardados. En la serie diaria, 14 follows y 0 unfollows del 23 al 26 nov (el 27 y el 28 nov aún no están). En esta ventana van 4 posts, todos con menos de 7 días; sus cifras son de esta lectura. La semana 4 (16 a 22 nov) se queda como ya quedó: 2.843 visualizaciones, 2.099 de alcance, 2 compartidos, 7 guardados y 0 follows del 16 al 20 nov.",
+    "Los tres Reels de grid con más visualizaciones y al menos 6 días siguen siendo también los tres con mejor retención a 3 segundos: martes 3 nov, 18:20 (71,0 %, 2.109), domingo 15 nov, 10:35 (64,6 %, 1.713) y jueves 5 nov, 18:25 (61,8 %, 1.614). El del sábado 7 nov, 21:10, con 26,2 %, se quedó en 198 visualizaciones aunque ya está en el grid. Es un patrón claro en los posts maduros, no una prueba de causa.",
+    "Follows por post (Insights, 22 nov; no hay una lectura nueva): los 6 vienen de Reels del grid, jueves 29 oct (1), martes 3 nov (2), jueves 5 nov (1) y martes 10 nov (2). Los 14 follows de la cuenta del 23 al 26 nov no se pueden atribuir a un post. El carrusel del martes 24 nov tiene 0 follows en la API del 28 nov.",
+    "Los Reels llegan sobre todo a extraños: 90,7 % de las visualizaciones de la cuenta en 30 días (13.534 de 14.920). El desglose por post sigue siendo el de Insights del 22 nov (91–100 % en cada Reel; el carrusel del 1 nov, 6,3 %).",
+    "Los compartidos ya no son un hilo fino. La API del 28 nov suma 21 en 30 días (9 en publicaciones, 11 en Reels y 1 en story). El salto está en el carrusel del martes 24 nov, 18:35: 9 compartidos, 34,4 / 1.000, con 262 visualizaciones, lectura del 28 nov (4 días). El trial de La Trouvaille, el mismo día a las 18:55, tiene 4 compartidos (12,7 / 1.000) y 9 guardados (28,5 / 1.000), con 316 visualizaciones, también a 4 días. Esas tasas quedan muy por encima del máximo anterior (3,3 / 1.000 compartidos el 29 oct), pero los dos posts tienen menos de 7 días y todavía poco alcance. Observación, no regla de formato.",
+    "El test de caption tutorial (jueves 5 nov, 18:25) no tiene un ganador claro: 3,1 guardados / 1.000, muy cerca del del martes 3 nov, 18:20 (3,8) y del domingo 15 nov, 10:35 (2,9).",
+    "Día y hora: la muestra sigue pequeña y desequilibrada (16 de 20 posts de noche; cero en lunes, miércoles y viernes). Lo que sí se ve está en la sección «Día y hora vs rendimiento», como observación, no como regla.",
+    "La misma caption («Some things are too meaningful to keep in a drawer») salió dos veces como trial: martes 17 nov, 20:05 (213 visualizaciones, 40,2 %) y jueves 19 nov, 19:40 (267, 31,9 %). No se han movido desde el 22 nov. n = 2: observación, no regla.",
+    "Los unfollows se concentraron el jueves 29 oct, el día del relanzamiento, con uno más el 5 nov y otro el 22 nov. Del 23 al 26 nov no hay unfollows en la serie diaria, y los 281 seguidores del 26 nov se mantienen hoy. De momento, los seguidores nuevos se quedan."
   ],
   "recommendations": [
-    "My data: volver a tener al menos un Reel en el grid cada semana. Esta semana fueron solo trials y hubo 0 follows del 16 al 20 nov; los 6 follows por post desde el relanzamiento son de Reels del grid y los trials suman 0. Grid tiene 5 Reels, así que es un patrón, no un veredicto de formato.",
-    "Opinion: el charm del martes 17 nov, 19:15 (1.583 visualizaciones, 3 guardados, 1 compartido), es el mejor candidato para pasar al grid si Instagram lo ofrece, como pasó con el del 3 nov.",
-    "My data: seguir buscando el tipo de arranque de los Reels que retienen a los 3 segundos (62–71 % en los tres mejores del grid). Los de retención baja no viajaron, y esta semana la media bajó a 41,7 %.",
-    "My data: aún no hay datos suficientes para juzgar formatos (15 Reels: 5 en el grid, 10 fuera; 1 carrusel), pilares (casi 4 semanas, pero la mayoría de los posts de noviembre no tienen pilar en Notion), horario (un solo post de mañana) ni uno vs dos Reels el mismo día.",
-    "Best practice (Adam Mosseri, ya citado en las semanas 1 a 4): los envíos por alcance siguen siendo la señal que más ayuda a una cuenta nueva a llegar a no seguidores. Encaja con lo que vemos, pero no es un hallazgo nuevo de estos números.",
-    "Algoritmo: sin cambio de ranking confirmado esta semana. El 17 nov Instagram empezó a activar Content Protection para creadores elegibles (detecta copias de tus vídeos originales y deja seguirlas, ocultarlas o añadir un enlace de crédito): https://creators.instagram.com/blog/introducing-content-protection/"
+    "My data: ya no diría solo «vuelve a tener un Reel en el grid cada semana». Dos trials fuera del grid, los del jueves 26 nov, ya van por 1.794 y 1.838 visualizaciones (lectura del 28 nov, unas 40 horas), y el trial del sábado 7 nov pasó al grid y no viajó (198 visualizaciones, 26,2 %). Los follows por post que tenemos (Insights, 22 nov) siguen saliendo de Reels del grid, pero no hay esa lectura para los posts nuevos. Mejor mirar los del 26 nov en la pasada del domingo antes de decidir si pasarlos al grid.",
+    "Opinion: si Instagram ofrece pasar al grid uno de los trials del 26 nov, el de Winnicott (jueves 26 nov, 18:30: 1.838 visualizaciones, 70,4 % de retención, 6 guardados, lectura del 28 nov) es el más sólido de los dos, en la línea del trial del 3 nov que luego pasó al grid. El charm del 17 nov (1.584 visualizaciones, casi sin subida desde el 22 nov) ya no es el candidato más claro.",
+    "My data: seguir buscando el tipo de arranque de los Reels que retienen a los 3 segundos (61,8–71,0 % en los tres mejores del grid con 6 días o más; los dos del 26 nov ya están en esa franja, lectura del 28 nov). Los de retención baja no viajaron, ni siquiera el del 7 nov cuando pasó al grid.",
+    "My data: aún no hay datos suficientes para juzgar formatos (18 Reels: 6 en el grid, 12 fuera; 2 carruseles). Acabamos de llegar a 6 Reels en el grid, pero los trials de esta semana ya igualan esas visualizaciones (lectura del 28 nov, menos de 7 días). No juzgo pilares: no tengo aquí el pilar de cada post de noviembre. Horario: un solo post de mañana. Uno vs dos Reels el mismo día: sigue sin regla, también después del 26 nov.",
+    "Best practice (Adam Mosseri, ya citado en las semanas 1 a 4): los envíos por alcance siguen siendo la señal que más ayuda a una cuenta nueva a llegar a no seguidores. El carrusel del 24 nov y el Reel de La Trouvaille dan, por primera vez, tasas de envío altas, con 4 días de vida y poco alcance. Encaja con el consejo, no es un veredicto de formato.",
+    "Algoritmo: sin cambio de ranking confirmado en esta pasada."
   ],
   "gaps": [
-    "La API no da follows ni visitas al perfil por Reel, ni el desglose de seguidor / no seguidor por post. Esos datos se leyeron a mano en Insights (web) el 22 nov, 17:55: solo el % de visualizaciones de no seguidores, no el del alcance.",
-    "Follows y % no seguidores por post existen para los 15 posts del 29 oct al 19 nov (lectura del 22 nov). El del 22 nov todavía no.",
-    "No existe un campo is_trial de lectura. is_shared_to_feed dice si el Reel está hoy en el Feed, no si nació como trial. El del martes 3 nov, 18:20, solo se conserva como trial gracias a Notion.",
+    "La API no da follows ni visitas al perfil por Reel, ni el desglose de seguidor / no seguidor por post. Esos datos se leyeron a mano en Insights (web) el 22 nov, 17:55: solo el % de visualizaciones de no seguidores, no el del alcance. No hay una lectura nueva desde entonces.",
+    "Follows y % no seguidores por post existen para los 15 posts del 29 oct al 19 nov (lectura del 22 nov). Faltan el del 22 nov, el Reel del 24 nov y los dos del 26 nov. El carrusel del 24 nov sí tiene follows en la API: 0, lectura del 28 nov; no tiene % de no seguidores.",
+    "No existe un campo is_trial de lectura. is_shared_to_feed dice si el Reel está hoy en el Feed, no si nació como trial. El del martes 3 nov, 18:20, se conserva como trial gracias a Notion. El del sábado 7 nov, 21:10, se marca aquí como «fue trial» porque en los snapshots del 21 al 25 nov tenía is_shared_to_feed=false y el del 26 nov ya sale en true.",
     "El carrusel no tiene retención a 3 segundos ni skip rate, ni el campo is_shared_to_feed.",
-    "Instagram no entrega los nombres de quién dejó de seguir. Los follows de los dos últimos días suelen tardar unos 2 días (faltan el 21 y 22 nov).",
-    "El tiempo medio de visualización del sábado 7 nov, 21:10, sale en la API como 69,6 s, muy por encima del resto (2,8–13,0 s) con 74,8 % de skip. Lo dejo tal cual, pero parece un dato raro de la API."
+    "Instagram no entrega los nombres de quién dejó de seguir. Los follows y unfollows de los dos últimos días suelen tardar unos 2 días (faltan el 27 y 28 nov).",
+    "El tiempo medio de visualización del sábado 7 nov, 21:10, sigue raro: la API del 28 nov lo da como 113,5 s (el 22 nov era 69,6 s), con 73,8 % de skip, frente a 2,8–13,0 s en el resto. Lo dejo tal cual, pero parece un dato raro de la API."
   ],
-  "gapsClosing": "Próxima pasada de textos prevista el domingo 29 nov, y después cada domingo. Si hay un recorte de follows o de % no seguidores por post, se pega en data/analysis.json con su fecha.",
+  "gapsClosing": "Esta pasada del sábado 28 nov es una actualización a mitad de semana, a petición de Daniela. La próxima pasada completa de textos está prevista el domingo 29 nov, y después cada domingo. Si hay un recorte de follows o de % no seguidores por post, se pega en data/analysis.json con su fecha.",
   "posts": {
     "17935876485402127": {
       "title": "Orchid reel",
@@ -114,7 +114,7 @@
     },
     "17877615198588064": {
       "title": "Preserving orchids in resin",
-      "wasTrial": false,
+      "wasTrial": true,
       "follows": 0,
       "nonFollowerPercent": 1.0,
       "snapshot": "22 nov 2026",
@@ -204,6 +204,28 @@
       "title": "This is how I made it",
       "wasTrial": false,
       "alt": "Portada del Reel del domingo 22 nov, 14:35: bolso de tela colgado de una escalera de madera, con el texto some things are too meaningful to keep them in a drawer."
+    },
+    "18004703946040904": {
+      "title": "Every orchid is unique",
+      "wasTrial": false,
+      "follows": 0,
+      "snapshot": "28 nov 2026",
+      "alt": "Publicación carrusel del martes 24 nov, 18:35: orquídeas, con el texto every orchid is unique."
+    },
+    "17937288153144759": {
+      "title": "La Trouvaille, Paris",
+      "wasTrial": false,
+      "alt": "Portada del Reel del martes 24 nov, 18:55: La Trouvaille, un rincón del mercadillo de Saint-Ouen, en París."
+    },
+    "17959284603284028": {
+      "title": "Flow (Csikszentmihalyi)",
+      "wasTrial": false,
+      "alt": "Portada del Reel del jueves 26 nov, 17:55, sobre el flow de Mihaly Csikszentmihalyi."
+    },
+    "17920183695265628": {
+      "title": "Potential space (Winnicott)",
+      "wasTrial": false,
+      "alt": "Portada del Reel del jueves 26 nov, 18:30, sobre el potential space de Donald Winnicott."
     }
   }
 }
